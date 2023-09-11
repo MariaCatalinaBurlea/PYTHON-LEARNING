@@ -60,3 +60,23 @@ for i, v in dictionary.items():
 for i in dictionary.items():
     index, value = i
     print(index, value)
+
+# break
+import random
+
+while True:
+    random_choice = random.choice([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+    if random_choice % 3 == 0:
+        break
+    print(f"the choice was: {random_choice}")
+
+# continue
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(f"odd number {i}")
+
+# pass - placeholder role, in order to fill a block with instructions
+if True:
+    pass
+
