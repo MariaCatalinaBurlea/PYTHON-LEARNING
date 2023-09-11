@@ -39,4 +39,13 @@ def function_with_args(param_1, param_2, *args, **kwargs):
     return sum_of_args
 
 
-print(function_with_args(1, 2, 3, 4, 5, param_1=3, c=6))
+#print(function_with_args(1, 2, 3, 4, 5, param_1=3, c=6))
+
+# Recursive function
+def get_sum(n):
+    if n == 0:
+        return 0
+    return n + get_sum(n-1)
+
+
+print(get_sum(7))

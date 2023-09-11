@@ -142,7 +142,7 @@ while True:
                     if word_to_guess.lower() == word_to_be_guessed.lower():
                         display_congratulations_message(word_to_be_guessed, has_won)
                         break
-                    else:c
+                    else:
                         number_of_attempts += 1
                         tried_letters_or_words.add(word_to_guess)
                         if display_no_of_attempts_and_return_game_result(number_of_attempts, word_to_be_guessed, word,
