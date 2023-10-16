@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in location_list %}
+            <tr>
+                <td> {{ forloop.counter }}</td>
+                <td> {{ item.city }}</td>
+                <td> {{ item.country }}</td>
+                <td> {% if item.active %}
+                    Active
+                {% else %}
+                    Inactive
+                {% endif %}</td>
+
+                <td>
+                    <a class="btn btn-success" href="{% url 'location:edit' item.id %}">Edit</a>
+                    {% if item.active %}
+                        <a class="btn btn-danger" href="{% url 'location:delete' item.id %}">Delete</a>
+                    {% else %}
+                        <a class="btn btn-warning" href="{% url 'location:activate' item.id %}">Activate</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+     <a class="btn btn-primary" href="{% url 'location:add' %}">Add locations</a>
+{% endblock %}
