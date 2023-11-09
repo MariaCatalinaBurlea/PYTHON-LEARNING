@@ -12,6 +12,11 @@
             <nav>
                 <a class="btn" href="/admin">Admin</a>
                 {% if request.user.is_authenticated %}
+                    {% if ready_to_work is False %}
+                        <a href="{% url 'timesheet:stop_timesheet' %}" class="btn btn-danger">Stop Timekeeping</a>
+                    {% else %}
+                        <a href="{% url 'timesheet:start_timesheet' %}" class="btn btn-success">Start Timekeeping</a>
+                    {% endif %}
                     <a class="btn btn-info" href="{% url 'location:location_list' %}">Locations</a>
                     <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
                 {% endif %}
